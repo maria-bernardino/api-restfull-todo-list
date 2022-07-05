@@ -1,8 +1,16 @@
-const express = require('express');
-const { signUp} = require('../controllers/user/registerUser');
+const express = require('express')
+const { editUser } = require('../controllers/user/editUser')
+const { login } = require('../controllers/user/login')
+const { signUp } = require('../controllers/user/registerUser')
+const authenticateAccess = require('../Middlewares/authenticateAcess')
 
+const routerUser = express()
 
-const routerUser = express();
-routerUser.post('/usuario',  signUp);
+routerUser.post('/signup', signUp)
+routerUser.post('/login', login)
 
-module.exports = routerUser;
+routerUser.use(authenticateAccess)
+
+routerUser.put('/usuario/:id', editUser)
+
+module.exports = routerUser
