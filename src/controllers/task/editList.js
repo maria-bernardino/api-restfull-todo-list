@@ -12,6 +12,7 @@ async function editList(req, res) {
       membro,
       categoria,
     });
+
     if (!listUpdate) {
       return res.status(404).json({ mensagem: 'Não foi possivel realizar a edição' });
     }
@@ -21,6 +22,4 @@ async function editList(req, res) {
     return res.status(500).json(error.mensage);
   }
 }
-module.exports = {
-  editList,
-};
+module.exports = { editList };

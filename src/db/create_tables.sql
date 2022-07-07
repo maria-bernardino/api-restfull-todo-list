@@ -3,8 +3,8 @@ create database tudu;
 drop table if exists usuarios;
 create table usuarios(
  id serial primary key,
- nome varchar(150) not null unique,
- email varchar(150) not null,
+ nome varchar(150) not null ,
+ email varchar(150) not null unique,
  senha text
 );
 

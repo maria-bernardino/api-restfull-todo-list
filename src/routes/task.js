@@ -7,7 +7,7 @@ const authenticateAccess = require('../Middlewares/authenticateAcess');
 
 const routerTask = express();
 
-routerTask.use(authenticateAccess);
+// routerTask.use(authenticateAccess);
 routerTask.get('/tarefas', listTask);
 routerTask.post('/tarefas', registerTask);
 routerTask.put('/tarefas/:id', editList);
