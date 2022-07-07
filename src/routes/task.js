@@ -1,11 +1,16 @@
-const express = require('express')
-const { registerTask } = require('../controllers/task/registerTask')
-const authenticateAccess = require('../Middlewares/authenticateAcess')
+const express = require('express');
+const { deleteList } = require('../controllers/task/deleteList');
+const { editList } = require('../controllers/task/editList');
+const { listTask } = require('../controllers/task/listTasks');
+const { registerTask } = require('../controllers/task/registerTask');
+const authenticateAccess = require('../Middlewares/authenticateAcess');
 
-const routerTask = express()
+const routerTask = express();
 
-routerTask.use(authenticateAccess)
+routerTask.use(authenticateAccess);
+routerTask.get('/tarefas', listTask);
+routerTask.post('/tarefas', registerTask);
+routerTask.put('/tarefas/:id', editList);
+routerTask.delete('/tarefas/:id', deleteList);
 
-routerTask.post('/cadastrar/:id', registerTask)
-
-module.exports = routerTask
+module.exports = routerTask;
