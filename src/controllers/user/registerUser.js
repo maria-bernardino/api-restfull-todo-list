@@ -15,10 +15,7 @@ async function signUp(req, res) {
     if (!user) {
       return res.status(400).json({ error: 'Error ao realizar cadastro' });
     }
-    const { senha: _, ...userInformation } = user;
-    return res.status(201).json({
-      usuario: userInformation,
-    });
+    return res.status(201).json();
   } catch (error) {
     return res.status(400).json(error.message);
   }
