@@ -3,7 +3,11 @@ const { editUser } = require('../controllers/user/editUser');
 const { login } = require('../controllers/user/login');
 const { signUp } = require('../controllers/user/registerUser');
 const authenticateAccess = require('../Middlewares/authenticateAcess');
-const { verifyEmailSignup, verifyEmailLogin } = require('../Middlewares/verify');
+const {
+  verifyEmailSignup,
+  verifyEmailLogin,
+  verifyEmailEditUser,
+} = require('../Middlewares/verify');
 
 const routerUser = express();
 
@@ -12,6 +16,6 @@ routerUser.post('/login', verifyEmailLogin, login);
 
 routerUser.use(authenticateAccess);
 
-routerUser.put('/usuario', editUser);
+routerUser.put('/usuario', verifyEmailEditUser, editUser);
 
 module.exports = routerUser;

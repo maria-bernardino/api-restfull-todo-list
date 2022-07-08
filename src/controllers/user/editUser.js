@@ -16,14 +16,6 @@ const editUser = async (req, res) => {
       .returning('*');
 
     res.status(200).json(userEdit[0]);
-  }
-  if (email && email !== verifyEmail) {
-    const hash = await bcrypt.hash(senha, 10);
-    const editEmail = await knex('usuarios')
-      .update({ nome, email, senha: hash })
-      .where('id', usuario.id)
-      .returning('*');
-    res.status(200).json(editEmail[0]);
   } else {
     const userEdit = await knex('usuarios')
       .update({ nome, email, senha: hash })
