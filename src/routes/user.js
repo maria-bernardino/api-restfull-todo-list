@@ -10,7 +10,7 @@ const routerUser = express();
 routerUser.post('/signup', verifyEmailSignup, signUp);
 routerUser.post('/login', login);
 
-// routerUser.use(authenticateAccess)
+routerUser.use(authenticateAccess);
 
 routerUser.put('/usuario/:id', editUser);
 
