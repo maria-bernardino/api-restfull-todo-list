@@ -8,7 +8,7 @@ const { verifyEmailSignup } = require('../Middlewares/verify');
 const routerUser = express();
 
 routerUser.post('/usuario', verifyEmailSignup, signUp);
-routerUser.post('/usuario', login);
+routerUser.post('/login', login);
 
 routerUser.use(authenticateAccess);
 
