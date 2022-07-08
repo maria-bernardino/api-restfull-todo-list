@@ -12,6 +12,6 @@ routerUser.post('/login', verifyEmailLogin, login);
 
 routerUser.use(authenticateAccess);
 
-routerUser.put('/usuario/:id', editUser);
+routerUser.put('/usuario', editUser);
 
 module.exports = routerUser;
