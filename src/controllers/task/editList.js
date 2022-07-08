@@ -17,7 +17,7 @@ async function editList(req, res) {
       return res.status(404).json({ mensagem: 'Não foi possivel realizar a edição' });
     }
 
-    return res.status(201).json({ mensagem: 'Dados atualizados com sucesso' });
+    return res.status(201).json();
   } catch (error) {
     return res.status(500).json(error.mensage);
   }
