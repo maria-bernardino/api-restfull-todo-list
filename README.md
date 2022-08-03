@@ -466,6 +466,6 @@ Essa é a rota que será chamada quando o usuario logado quiser excluir uma das 
 ```
 
 
-Link do deploy da API : https://app-tutu.herokuapp.com/
+Link do deploy da API : https://app-tudu.herokuapp.com/
 
 
